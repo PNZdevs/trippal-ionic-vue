@@ -13,9 +13,7 @@
             <ion-label>Explorar</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="tab3" href="/tabs/tab3">
-            <ion-icon :icon="addCircleOutline" style="font-size: 5em" />
-          </ion-tab-button>
+          <MiddleButton v-on:close="closeModal" />
           
 
           <ion-tab-button tab="favorites" href="/tabs/favorites">
@@ -37,18 +35,18 @@
 <script lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonContent, IonLabel, IonIcon, IonPage } from '@ionic/vue';
 import { defineComponent } from '@vue/runtime-core';
-import { ellipse, square, home, homeOutline, compass, compassOutline, heart, heartOutline, notifications, notificationsOutline, addCircleOutline } from 'ionicons/icons';
+import { ellipse, square, home, homeOutline, compass, compassOutline, heart, heartOutline, notifications, notificationsOutline,  } from 'ionicons/icons';
+import MiddleButton from '@/components/AddButton.vue'
 
 export default defineComponent ({
   name: 'Tabs',
-  components: { IonContent, IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage },
+  components: { IonContent, IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage, MiddleButton },
   data() {
     return {
         homeIcon: home,
         exploreIcon: compassOutline,
         favoriteIcon: heartOutline,
-        notificationsIcon: notificationsOutline,
-        middleIcon: addCircleOutline
+        notificationsIcon: notificationsOutline
     }
   },
   methods: {
@@ -59,6 +57,9 @@ export default defineComponent ({
       this.exploreIcon = selectedTab == 'explore' ? compass : compassOutline
       this.favoriteIcon = selectedTab == 'favorites' ? heart : heartOutline
       this.notificationsIcon = selectedTab == 'notifications' ? notifications : notificationsOutline
+    },
+    closeModal() {
+        console.log('ciao')
     }
   },
   
@@ -73,8 +74,7 @@ export default defineComponent ({
       heart,
       heartOutline,
       notifications,
-      notificationsOutline,
-      addCircleOutline
+      notificationsOutline
     }
   }
 })
