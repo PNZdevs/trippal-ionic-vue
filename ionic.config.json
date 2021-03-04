@@ -1,0 +1,7 @@
+{
+  "name": "trippal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
