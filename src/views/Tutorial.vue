@@ -1,19 +1,18 @@
 <template>
 <ion-page>
+    <router-link id="skip" to="/tabs/home">Skip</router-link>
     <ion-content class="ion-padding">
-        <router-link to="/tabs/home">Skip</router-link>
         <ion-slides
           pager="true"
           @ionSlideReachEnd="togglePagination"
           :options="swiperOptions">
-            <ion-slide>
-                <h1 @click="togglePagination">Slide1</h1>
-            </ion-slide>
-            <ion-slide>
-                <h1>Slide2</h1>
-            </ion-slide>
-            <ion-slide>
-                <h1>Slide3</h1>
+            <ion-slide v-for="slide of slides" :key="slide.id">
+                <!-- <h1 @click="togglePagination">Slide1</h1> -->
+              <Slide
+                :text="slide.text" 
+                :img="slide.image" 
+                :position="slide.position"
+                :color="slide.color"/>
             </ion-slide>
         </ion-slides>
     </ion-content>
@@ -29,16 +28,23 @@
 
 import { IonPage, IonSlides, IonSlide, IonContent, IonButton } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import Slide from '@/components/SlideTutorial.vue'
 
 export default defineComponent ({
   name: 'Tutorial',
-  components: { IonPage, IonSlides, IonSlide, IonContent, IonButton },
+  components: { IonPage, IonSlides, IonSlide, IonContent, IonButton, Slide },
   data() {
     return {
       isLast: false as boolean,
       swiperOptions: {
         //  options here
-      }
+        spaceBetween: 100
+      },
+      slides: [
+        {id: 1, text: 'Mantén tus memorias vivas', position: 'top-right', color: 'orange' , image: require('@/assets/img/tutorial/img1.jpg')},
+        {id: 2, text: 'Sigue a personas con intereses similares a los tuyos', position: 'bottom-left', color: 'green' , image: require('@/assets/img/tutorial/img2.jpg')},
+        {id: 3, text: 'Inspírate e inspira a otros a ver el mundo', position: 'top', color: 'green-dark' , image: require('@/assets/img/tutorial/img3.jpg')}
+      ]
     }
   },
   methods: {
@@ -90,5 +96,14 @@ div.flex-center {
 .fade-leave-to {
   opacity: 0;
 }
-  
+
+
+
+#skip {
+  position: fixed;
+  top: 1em;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
 </style>
