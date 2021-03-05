@@ -17,7 +17,7 @@ export default defineComponent ({
   name: 'AddButton',
   components: { IonIcon },
   methods: {
-    async handleClick() {
+    handleClick: async function() {
       const modal = await modalController
         .create({
               component: BlankPageVue

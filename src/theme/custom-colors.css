@@ -1,0 +1,17 @@
+:root {
+    --ion-color-orange: #F28705;
+    --ion-color-orange-rgb: 242,135,5;
+    --ion-color-orange-contrast: #ffffff;
+    --ion-color-orange-contrast-rgb: 255,255,255;
+    --ion-color-orange-shade: #d57704;
+    --ion-color-orange-tint: #f3931e;
+  }
+  
+  .ion-color-orange {
+    --ion-color-base: var(--ion-color-orange);
+    --ion-color-base-rgb: var(--ion-color-orange-rgb);
+    --ion-color-contrast: var(--ion-color-orange-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-orange-contrast-rgb);
+    --ion-color-shade: var(--ion-color-orange-shade);
+    --ion-color-tint: var(--ion-color-orange-tint);
+  }
