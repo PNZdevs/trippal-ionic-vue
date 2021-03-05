@@ -79,3 +79,9 @@ export default defineComponent ({
   }
 })
 </script>
+
+<style scoped>
+ion-tab-button {
+  --color-selected: #000000
+}
+</style>
