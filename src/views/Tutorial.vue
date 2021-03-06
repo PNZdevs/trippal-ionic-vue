@@ -80,7 +80,7 @@ div.flex-center {
         --padding-start: 4em;
         --padding-end: 4em;
         text-transform: unset;
-        font-family: Open Sans;
+        font-family: 'Open Sans', sans-serif;
     }
 }
 

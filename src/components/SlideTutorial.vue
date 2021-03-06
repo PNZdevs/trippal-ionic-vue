@@ -82,7 +82,7 @@ p {
     padding: 0 1em;
     margin: 0;
     text-align: start;
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
