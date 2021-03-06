@@ -7,7 +7,6 @@
           @ionSlideReachEnd="togglePagination"
           :options="swiperOptions">
             <ion-slide v-for="slide of slides" :key="slide.id">
-                <!-- <h1 @click="togglePagination">Slide1</h1> -->
               <Slide
                 :text="slide.text" 
                 :img="slide.image" 
