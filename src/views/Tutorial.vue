@@ -74,7 +74,7 @@ div.flex-center {
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 2em;
+    bottom: 1em;
     width: 100%;
     ion-button {
         --padding-start: 4em;
