@@ -85,6 +85,7 @@ p {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
+    font-size: 22px;
     margin-bottom: 1em;
     color: #000000;
 
