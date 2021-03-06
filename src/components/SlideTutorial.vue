@@ -24,7 +24,6 @@ export default defineComponent ({
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 
 .container {
     position: relative;
