@@ -1,7 +1,7 @@
 <template>
 <ion-page>
     <router-link id="skip" to="/tabs/home">Skip</router-link>
-    <ion-content class="ion-padding">
+    <ion-content>
         <ion-slides
           pager="true"
           @ionSlideReachEnd="togglePagination"

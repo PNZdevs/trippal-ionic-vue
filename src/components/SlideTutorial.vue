@@ -25,19 +25,19 @@ export default defineComponent ({
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
 .container {
-    // background: pink;
-    width: 90vw;
-    height: 425px;
     position: relative;
     bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1em;
 
     .image-container {
-        width: 285px;
-        height: 374px;
+        width: 100vw;
+        height: 100vh;
+        max-height: 55vh;
         box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.1);
         border-radius: 14px;
         background-position: center;
@@ -62,7 +62,7 @@ export default defineComponent ({
             bottom: 0;
         }
         &.top {
-            width: 336px;
+            width: 100%;
             height: 221px;
             position: absolute;
             top: 0;
@@ -86,10 +86,15 @@ p {
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
-    line-height: 33px;
-
+    margin-bottom: 1em;
     color: #000000;
+
+    @media (min-width: 700px) {
+        & {
+            font-size: 24px;
+            line-height: 33px;
+        }
+    }
 }
 
 div.flex {
@@ -97,6 +102,15 @@ div.flex {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 100vw;
+    padding: 0 1em;
+
+    @media (min-width: 700px) {
+        & {
+            max-width: 536px;
+            justify-content: center;
+        }
+    }
 }
 
 </style>
