@@ -20,7 +20,8 @@ export default defineComponent ({
     handleClick: async function() {
       const modal = await modalController
         .create({
-              component: BlankPageVue
+              component: BlankPageVue,
+              cssClass: 'half-modal'
           })
       currentModal = modal
       return modal.present();
