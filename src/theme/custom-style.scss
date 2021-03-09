@@ -1,0 +1,12 @@
+/* modal class for mobiles */
+@media (max-width: 600px) {
+    .half-modal {
+        --max-height: 90vh;
+        --border-radius: 20px 20px 0 0;
+        
+        .modal-wrapper {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}

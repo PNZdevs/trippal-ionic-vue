@@ -234,3 +234,16 @@ http://ionicframework.com/docs/theming/ */
     --ion-card-background: #1e1e1e;
   }
 }
+
+/* modal class for mobiles */
+@media (max-width: 600px) {
+  .half-modal {
+    --max-height: 90vh;
+    --border-radius: 20px 20px 0 0;
+  }
+
+  .half-modal .modal-wrapper {
+    position: absolute;
+    bottom: 0;
+  }
+}
