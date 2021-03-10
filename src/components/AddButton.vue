@@ -1,7 +1,7 @@
 <template>
 <ion-icon
   :icon="addCircleOutline"
-  style="font-size: 3em; padding: 0 .2em"
+  style="font-size: 3rem; padding: 0 .2em"
   @click="handleClick" />
 </template>
 

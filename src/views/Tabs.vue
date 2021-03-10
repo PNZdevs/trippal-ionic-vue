@@ -13,7 +13,9 @@
             <ion-label>Explorar</ion-label>
           </ion-tab-button>
 
+          <ion-tab-button tab="null">
           <MiddleButton />
+          </ion-tab-button>
           
 
           <ion-tab-button tab="favorites" href="/tabs/favorites">
