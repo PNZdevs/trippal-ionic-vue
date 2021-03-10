@@ -13,7 +13,7 @@
             <ion-label>Explorar</ion-label>
           </ion-tab-button>
 
-          <MiddleButton v-on:close="closeModal" />
+          <MiddleButton />
           
 
           <ion-tab-button tab="favorites" href="/tabs/favorites">
@@ -57,9 +57,6 @@ export default defineComponent ({
       this.exploreIcon = selectedTab == 'explore' ? compass : compassOutline
       this.favoriteIcon = selectedTab == 'favorites' ? heart : heartOutline
       this.notificationsIcon = selectedTab == 'notifications' ? notifications : notificationsOutline
-    },
-    closeModal() {
-        console.log('ciao')
     }
   },
   
