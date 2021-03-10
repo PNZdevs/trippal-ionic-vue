@@ -14,7 +14,7 @@ import { defineComponent } from 'vue';
 
 let currentModal: HTMLIonModalElement | null = null
 export default defineComponent ({
-  name: 'AddButton',
+  name: 'MiddleButton',
   components: { IonIcon },
   methods: {
     handleClick: async function() {

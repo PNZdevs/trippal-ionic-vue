@@ -38,7 +38,7 @@
 import { IonTabBar, IonTabButton, IonTabs, IonContent, IonLabel, IonIcon, IonPage } from '@ionic/vue';
 import { defineComponent } from '@vue/runtime-core';
 import { ellipse, square, home, homeOutline, compass, compassOutline, heart, heartOutline, notifications, notificationsOutline,  } from 'ionicons/icons';
-import MiddleButton from '@/components/AddButton.vue'
+import MiddleButton from '@/components/MiddleButton.vue'
 
 export default defineComponent ({
   name: 'Tabs',
