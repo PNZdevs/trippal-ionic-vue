@@ -87,7 +87,7 @@ p {
     font-weight: bold;
     font-size: 22px;
     margin-bottom: 1em;
-    color: #000000;
+    color: var(--ion-color-dark);
 
     @media (min-width: 700px) {
         & {

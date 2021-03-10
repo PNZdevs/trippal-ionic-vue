@@ -79,6 +79,6 @@ export default defineComponent ({
 
 <style scoped>
 ion-tab-button {
-  --color-selected: #000000
+  --color-selected: var(--ion-color-dark);
 }
 </style>
