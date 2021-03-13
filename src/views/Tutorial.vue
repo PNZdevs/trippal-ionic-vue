@@ -54,6 +54,9 @@ export default defineComponent ({
       const ionSlides = document.querySelector('ion-slides') as HTMLIonSlidesElement
       ionSlides.lockSwipes(true)
       return;
+    },
+    endTutorial() {
+      localStorage.setItem('tutorial', ''+1)
     }
     
   },

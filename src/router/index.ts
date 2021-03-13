@@ -6,7 +6,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     // redirect: '/tabs/home'
-    redirect: '/tutorial'
+    redirect: !localStorage.tutorial ? '/tutorial' : '/tabs/home'
   },
   {
     path: '/tabs/',
