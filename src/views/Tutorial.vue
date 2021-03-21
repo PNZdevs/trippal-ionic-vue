@@ -17,7 +17,7 @@
     </ion-content>
     <transition name="fade">
         <div v-if="isLast" class="flex-center">
-            <ion-button router-link="/tabs/home" mode="md" strong color="orange">Comenzar</ion-button>
+            <ion-button @click="endTutorial" mode="md" strong color="orange">Comenzar</ion-button>
         </div>
     </transition>
 </ion-page>
@@ -55,8 +55,9 @@ export default defineComponent ({
       ionSlides.lockSwipes(true)
       return;
     },
-    endTutorial() {
+    async endTutorial() {
       localStorage.setItem('tutorial', ''+1)
+      this.$router.replace('/tabs/home')
     }
     
   },
