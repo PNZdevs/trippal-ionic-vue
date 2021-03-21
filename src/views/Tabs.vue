@@ -8,7 +8,7 @@
             <ion-label>Home</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="explore" href="/tabs/tab2">
+          <ion-tab-button tab="explore" href="/tabs/explore">
             <ion-icon :icon="exploreIcon" />
             <ion-label>Explorar</ion-label>
           </ion-tab-button>
