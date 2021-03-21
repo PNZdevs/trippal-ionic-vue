@@ -1,6 +1,6 @@
 <template>
 <ion-page>
-  <ion-header class="ion-no-border">
+  <ion-header v-if="isModal" class="ion-no-border">
     <ion-toolbar>
       <ion-buttons slot="end">
         <ion-button @click="dismissModal">
@@ -9,6 +9,9 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
+  <div class="flex center full">
+    <h2>{{label}}</h2>
+  </div>
 </ion-page>
 </template>
 
@@ -21,6 +24,7 @@ import { closeOutline } from 'ionicons/icons'
 export default defineComponent ({
   name: 'BlankPage',
   components: { IonPage, IonHeader, IonToolbar, IonButtons, IonIcon, IonButton },
+  props: ['isModal', 'label'],
   methods: {
     dismissModal() {
       document.dispatchEvent( new Event('dismissModal'))
@@ -37,5 +41,12 @@ export default defineComponent ({
 </script>
 
 <style lang="scss" scoped>
-  
+  .flex.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .full {
+    height: 100%;
+  }
 </style>
