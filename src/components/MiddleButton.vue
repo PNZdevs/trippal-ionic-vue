@@ -12,7 +12,6 @@ import { IonIcon, modalController } from '@ionic/vue';
 import { addCircleOutline } from 'ionicons/icons'
 import { defineComponent } from 'vue';
 
-let currentModal: HTMLIonModalElement | null = null
 export default defineComponent ({
   name: 'MiddleButton',
   components: { IonIcon },
@@ -21,20 +20,13 @@ export default defineComponent ({
       const modal = await modalController
         .create({
               component: BlankPageVue,
-              cssClass: 'half-modal'
+              cssClass: 'half-modal',
+              componentProps: {isModal: true, label: 'modal'}
           })
-      currentModal = modal
+      document.addEventListener('dismissModal', () => modal.dismiss() )
       return modal.present();
     }
     
-  },
-  mounted() {
-      document.addEventListener('dismissModal', () => {
-        if(currentModal) {
-            currentModal.dismiss()
-            currentModal = null
-        }
-      })
   },
   
   setup() {
