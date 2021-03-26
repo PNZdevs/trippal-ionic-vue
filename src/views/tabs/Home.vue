@@ -4,13 +4,14 @@
       <HeaderHome :scrollTop="scrollTop" />
       <div class="content">
         <!-- insert content here -->
+        <ion-button color="orange" router-link="/tutorial" class="ion-margin">Watch Tutorial</ion-button>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonPage, IonContent } from '@ionic/vue';
+import { IonPage, IonContent, IonButton } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import HeaderHome from "@/components/HeaderHome.vue";
 
@@ -20,6 +21,7 @@ export default defineComponent({
     IonPage,
     IonContent,
     HeaderHome,
+    IonButton
   },
   data() {
     return {
