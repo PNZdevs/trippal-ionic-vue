@@ -18,9 +18,9 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'home',
-        // component: () => import('@/views/tabs/Home.vue')
-        component: () => import('@/views/BlankPage.vue'),
-        props: {label: 'home'}
+        component: () => import('@/views/tabs/Home.vue')
+        // component: () => import('@/views/BlankPage.vue'),
+        // props: {label: 'home'}
       },
       {
         path: 'explore',
