@@ -2,7 +2,9 @@
   <ion-page>
     <ion-content scroll-events="true" @ionScroll="(e) => (scrollTop = e.detail.scrollTop)" >
       <HeaderHome :scrollTop="scrollTop" />
-      <div style="height: 100vh; background: #f9f9f9"></div>
+      <div class="content">
+        <!-- insert content here -->
+      </div>
     </ion-content>
   </ion-page>
 </template>
@@ -27,5 +29,16 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.content{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  margin-top: 65vw;
+  @media (min-width: 670px) {
+    &{
+      margin-top: 50vh;
+    }
+  }
+}
 </style>

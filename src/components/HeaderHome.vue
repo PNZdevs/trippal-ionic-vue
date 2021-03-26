@@ -4,7 +4,7 @@
         <div v-if="opTop > 0" :style="{opacity: opTop }" class="row center">
             <span>{{opTop}} - {{scrollTop}} </span>
         </div>
-        <div v-if="opBottom > 0"  ref="bottomRow" class="row bottom center">
+        <div v-if="opBottom > 0" :style="{opacity: opBottom }" ref="bottomRow" class="row bottom center">
             <span>{{opBottom}} </span>
         </div>
 
@@ -35,8 +35,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .container {
-  background: url("../assets/img/img-home.jpeg") no-repeat top/100%;
-  background-attachment: fixed;
+  background: url("../assets/img/img-home.jpeg") no-repeat center/100%;
   width: 100%;
   height: 65vw; 
   /*
@@ -44,7 +43,8 @@ export default defineComponent({
   /* h: 65 
   */
   max-height: 50vh; /* if vw > vh */
-  position: relative;
+  position: fixed;
+  z-index: -100;
   & > div.overlay {
     position: absolute;
     width: 100%;
@@ -54,21 +54,23 @@ export default defineComponent({
     background: rgba(0, 51, 56, 0.58);
   }
 
-  .row{
-      color: #fff;
-      font-size: 1.5em;
-      position: sticky;
-  }
-  .row:first-child{
-      top: 10px;
-  }
+}
+
+
+.row{
+    color: #fff;
+    font-size: 1.5em;
+    position: relative;
+}
+.row:first-child{
+    top: 10px;
+}
+.row.bottom{
+    top: 42vh
+}
+@media (max-width: 620px) {
   .row.bottom{
-      top: 42vh
-  }
-  @media (max-width: 500px) {
-    .row.bottom{
-        top: calc(65vw - 60px);
-    }
+      top: calc(65vw - 60px);
   }
 }
 
