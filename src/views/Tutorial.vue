@@ -4,7 +4,8 @@
     <ion-content>
         <ion-slides
           pager="true"
-          @ionSlideReachEnd="togglePagination"
+          @ionSlideReachEnd="() => togglePagination(true)"
+          @ionSlidePrevStart="() => togglePagination(false)"
           :options="swiperOptions">
             <ion-slide v-for="slide of slides" :key="slide.id">
               <Slide
@@ -16,7 +17,7 @@
         </ion-slides>
     </ion-content>
     <transition name="fade">
-        <div v-if="isLast" class="flex-center">
+        <div v-if="buttonShow" class="flex-center">
             <ion-button @click="endTutorial" mode="md" strong color="orange">Comenzar</ion-button>
         </div>
     </transition>
@@ -34,7 +35,7 @@ export default defineComponent ({
   components: { IonPage, IonSlides, IonSlide, IonContent, IonButton, Slide },
   data() {
     return {
-      isLast: false as boolean,
+      buttonShow: false as boolean,
       swiperOptions: {
         //  options here
         spaceBetween: 100
@@ -47,15 +48,11 @@ export default defineComponent ({
     }
   },
   methods: {
-    togglePagination() {
-      this.isLast = !this.isLast
-      const pagination = document.querySelector('div.swiper-pagination') as HTMLElement
-      pagination.classList.toggle('swiper-pagination-hidden')
-      const ionSlides = document.querySelector('ion-slides') as HTMLIonSlidesElement
-      ionSlides.lockSwipes(true)
-      return;
+    togglePagination(isEnd: boolean) {
+      this.buttonShow = isEnd;
+      (document.querySelector('div.swiper-pagination') as HTMLElement).classList.toggle('swiper-pagination-hidden', isEnd)
     },
-    async endTutorial() {
+    endTutorial() {
       localStorage.setItem('tutorial', ''+1)
       this.$router.replace('/tabs/home')
     }
