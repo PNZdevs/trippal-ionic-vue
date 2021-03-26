@@ -23,8 +23,20 @@ export default defineComponent ({
               cssClass: 'half-modal',
               componentProps: {isModal: true, label: 'modal'}
           })
-      document.addEventListener('dismissModal', () => modal.dismiss() )
+      document.addEventListener('dismissModal', () => {
+        modal.dismiss();
+        this.toggleHeaderOpacity(1);
+      } );
+
+      this.toggleHeaderOpacity(0)
       return modal.present();
+    },
+    toggleHeaderOpacity(value: number) {
+      const row = document.querySelector('ion-content')?.firstElementChild?.querySelector('.row') as HTMLDivElement
+      if(!row){
+        return;
+      }
+      row.style.opacity = ''+value;
     }
     
   },
