@@ -1,10 +1,13 @@
 <template>
   <div class="container">
     <div class="overlay">
-        <div v-if="opTop > 0" :style="{opacity: opTop }" class="row center">
+        <div v-if="opTop > 0" :style="{opacity: opTop }" class="row">
             <span>{{opTop}} - {{scrollTop}} </span>
         </div>
-        <div v-if="opBottom > 0" :style="{opacity: opBottom }" ref="bottomRow" class="row bottom center">
+        <div v-if="opMiddle > 0" :style="{opacity: opMiddle }" ref="middleRow" class="row middle">
+            <span>Comienza<br>tu aventura</span>
+        </div>
+        <div v-if="opBottom > 0" :style="{opacity: opBottom }" ref="bottomRow" class="row bottom">
             <span>{{opBottom}} </span>
         </div>
 
@@ -22,10 +25,14 @@ export default defineComponent({
   props: ['scrollTop', 'contentTop'],
   computed: {
       opBottom(): number {
-        return (100 - this.scrollTop * 2 ) / 100
+        return (100 - this.scrollTop * 3 ) / 100
       },
       opTop(): number {
-        return this.contentTop ? this.contentTop / 100 : 1
+        return this.contentTop ? (this.contentTop - 30) / 100 : 1
+      },
+      opMiddle(): number {
+        const height = window.innerWidth * .35
+        return (height - this.scrollTop) / 100
       }
   }
   
@@ -56,26 +63,39 @@ export default defineComponent({
 }
 
 
-.row{
-    color: #fff;
-    font-size: 1.5em;
-    position: relative;
+.row {
+  color: #fff;
+  font-size: 1.5em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 0;
 }
 .row:first-child{
-    top: 10px;
+  top: 10px;
 }
 .row.bottom{
-    top: 42vh
+  top: 42vh
+}
+.row.middle{
+  top: 11vh;
+  span {
+    font-size: 77px;
+    font-family: 'Open Sans';
+    line-height: 95px;
+    text-align: center;
+  }
 }
 @media (max-width: 620px) {
   .row.bottom{
-      top: calc(65vw - 60px);
+    top: 50vw;
   }
-}
-
-.row.center {
-    display: flex;
-    justify-content: center;
-    height: 0;
+  .row.middle{
+    span {
+      line-height: 33px;
+      font-size: 24px;
+    }
+    top: 22vw;
+  }
 }
 </style>
