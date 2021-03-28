@@ -47,3 +47,41 @@ Once the web assets and configuration are copied into your native project, you c
 [More details](https://ionicframework.com/docs/cli/commands/capacitor-build)
 
 
+<br>
+<br>
+<br>
+
+Helpful tips
+==============
+
+Solve the following problem:
+----------------------------
+
+> [error] Unable to launch Android Studio. You must configure "linuxAndroidStudioPath" in your capacitor.config.json to point to the location of `studio.sh`, using JavaScript-escaped paths:  
+Example:  
+{  
+&nbsp;&nbsp;&nbsp;&nbsp;"linuxAndroidStudioPath": "/usr/local/android-studio/bin/studio.sh"  
+}
+
+<br>
+
+### 1. Create directories:
+```shell
+$ sudo mkdir /usr/local/android-studio  
+$ sudo mkdir /usr/local/android-studio/bin
+```
+
+<br>
+
+### 2. Find where Android Studio is installed:
+```shell
+$ sudo find / -name studio.sh
+```
+
+<br>
+
+### 3. Create soft link to `studio.sh`, where **$ANDROID_STUDIO** is the path where Android Studio is installed:
+```shell
+$ sudo ln -s $ANDROID_STUDIO/bin/studio.sh /usr/local/android-studio/bin/studio.sh
+```
+
