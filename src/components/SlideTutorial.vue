@@ -70,10 +70,10 @@ export default defineComponent ({
             background-color: var(--ion-color-orange);
         }
         &.green {
-            background-color: #03A696;
+            background-color: var(--ion-color-persian-green);
         }
         &.green-dark {
-            background-color: #025159;
+            background-color: var(--ion-color-midnight-green);
         }
     }
 }
