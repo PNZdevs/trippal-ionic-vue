@@ -31,7 +31,7 @@ export default defineComponent({
         return this.contentTop ? (this.contentTop - 30) / 100 : 1
       },
       opMiddle(): number {
-        const height = window.innerWidth * .35
+        const height = window.innerWidth < 620 ? window.innerWidth * .35 : window.innerHeight * .2
         return (height - this.scrollTop) / 100
       }
   }
