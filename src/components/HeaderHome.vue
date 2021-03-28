@@ -19,14 +19,13 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "HeaderHome",
   components: {},
-  props: ['scrollTop'],
+  props: ['scrollTop', 'contentTop'],
   computed: {
       opBottom(): number {
-          return (100 - this.scrollTop * 2) / 100
+        return (100 - this.scrollTop * 2 ) / 100
       },
       opTop(): number {
-
-        return (200 - this.scrollTop ) / 100
+        return this.contentTop ? this.contentTop / 100 : 1
       }
   }
   

@@ -1,8 +1,8 @@
 <template>
   <ion-page>
-    <ion-content scroll-events="true" @ionScroll="(e) => (scrollTop = e.detail.scrollTop)" >
-      <HeaderHome :scrollTop="scrollTop" />
-      <div class="content">
+    <ion-content scroll-events="true" @ionScroll="handleScroll" >
+      <HeaderHome :scrollTop="scrollTop" :contentTop="contentTop" />
+      <div class="content" ref="content">
         <!-- insert content here -->
         <ion-button color="orange" router-link="/tutorial" class="ion-margin">Watch Tutorial</ion-button>
       </div>
@@ -26,8 +26,16 @@ export default defineComponent({
   data() {
     return {
       scrollTop: 0,
+      contentTop: undefined as number | undefined,
     };
   },
+  methods: {
+    handleScroll: function(e: any) {
+      this.contentTop = (this.$refs.content as HTMLElement).getBoundingClientRect().top;
+      this.scrollTop = e.detail.scrollTop
+      
+    }
+  }
 });
 </script>
 
