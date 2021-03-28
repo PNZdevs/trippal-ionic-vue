@@ -35,8 +35,7 @@ export default defineComponent ({
 
     .image-container {
         width: 100vw;
-        height: 100vh;
-        max-height: 55vh;
+        height: 55vh;
         box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.1);
         border-radius: 14px;
         background-position: center;
