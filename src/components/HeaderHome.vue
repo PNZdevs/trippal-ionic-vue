@@ -2,13 +2,13 @@
   <div class="container">
     <div class="overlay">
         <div v-if="opTop > 0" :style="{opacity: opTop }" class="row">
-            <span>{{opTop}} - {{scrollTop}} </span>
+            <span>serchbox here </span>
         </div>
         <div v-if="opMiddle > 0" :style="{opacity: opMiddle }" ref="middleRow" class="row middle">
             <span>Comienza<br>tu aventura</span>
         </div>
         <div v-if="opBottom > 0" :style="{opacity: opBottom }" ref="bottomRow" class="row bottom">
-            <span>{{opBottom}} </span>
+            <span>¿A donde vamos?</span>
         </div>
 
     </div>
@@ -75,7 +75,10 @@ export default defineComponent({
   top: 10px;
 }
 .row.bottom{
-  top: 42vh
+  top: 42vh;
+  span {
+    text-align: center;
+  }
 }
 .row.middle{
   top: 11vh;
