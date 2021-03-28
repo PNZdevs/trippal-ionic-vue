@@ -75,30 +75,32 @@ export default defineComponent({
   top: 10px;
 }
 .row.bottom{
-  top: 42vh;
+  top: 50vw;
   span {
     text-align: center;
   }
 }
 .row.middle{
-  top: 11vh;
+  top: 22vw;
   span {
-    font-size: 77px;
+    line-height: 33px;
+    font-size: 24px;
     font-family: 'Open Sans';
-    line-height: 95px;
     text-align: center;
   }
 }
-@media (max-width: 620px) {
+
+//desktop rules
+@media (min-width: 620px) {
   .row.bottom{
-    top: 50vw;
+    top: 42vh;
   }
   .row.middle{
     span {
-      line-height: 33px;
-      font-size: 24px;
+      font-size: 77px;
+      line-height: 95px;
     }
-    top: 22vw;
+    top: 11vh;
   }
 }
 </style>
