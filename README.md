@@ -67,21 +67,20 @@ Example:
 
 ### 1. Create directories:
 ```shell
-$ sudo mkdir /usr/local/android-studio  
-$ sudo mkdir /usr/local/android-studio/bin
+# mkdir -p /usr/local/android-studio/bin
 ```
 
 <br>
 
 ### 2. Find where Android Studio is installed:
 ```shell
-$ sudo find / -name studio.sh
+# find / -name studio.sh
 ```
 
 <br>
 
 ### 3. Create soft link to `studio.sh`, where **$ANDROID_STUDIO** is the path where Android Studio is installed:
 ```shell
-$ sudo ln -s $ANDROID_STUDIO/bin/studio.sh /usr/local/android-studio/bin/studio.sh
+# ln -s $ANDROID_STUDIO/bin/studio.sh /usr/local/android-studio/bin/studio.sh
 ```
 
